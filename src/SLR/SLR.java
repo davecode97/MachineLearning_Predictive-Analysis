@@ -5,7 +5,7 @@ import java.math.MathContext;
 import java.util.ArrayList;
 
 
-public class SLR {
+public class SLR implements ISLR{
 
     // --------- ENTITIES -----------
     ArrayList<BigDecimal> x;
@@ -13,17 +13,18 @@ public class SLR {
     BigDecimal n;
 
     //-------- D A T A S E T -----------
-    int[] x_SLR = { 23  , 26,  30,   34,   43,   48,   52,   57,   58 };
-    int[] y_SLR = { 651, 762, 856, 1063, 1190, 1298, 1421, 1440, 1518 };
-    BigDecimal n_SLR_BigD = BigDecimal.valueOf(x_SLR.length);
+    DataSet dataSet;
 
-    public void SLR(){
+    BigDecimal n_SLR_BigD = BigDecimal.valueOf(dataSet.x_SLR.length);
+
+    @Override
+    public void display(){
         ArrayList<BigDecimal> x_SLR_BigD = new ArrayList<>();
         ArrayList<BigDecimal> y_SLR_BigD = new ArrayList<>();
 
-        for (int i = 0; i < x_SLR.length; i++) {
-            x_SLR_BigD.add(BigDecimal.valueOf(x_SLR[i]));
-            y_SLR_BigD.add(BigDecimal.valueOf(y_SLR[i]));
+        for (int i = 0; i < dataSet.x_SLR.length; i++) {
+            x_SLR_BigD.add(BigDecimal.valueOf(dataSet.x_SLR[i]));
+            y_SLR_BigD.add(BigDecimal.valueOf(dataSet.y_SLR[i]));
         }
 
         this.x = x_SLR_BigD;
