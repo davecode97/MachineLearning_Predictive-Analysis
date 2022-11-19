@@ -1,7 +1,7 @@
 # Machine Learning and Predictive Analysis
-SLR: Simple Linear Regression
+SimpleLinearRegression: Simple Linear Regression
 
-MLR: Multilinear Regression
+MultiLinearRegression: Multilinear Regression
 > Vectorized
 > Cramer
 > Gradient

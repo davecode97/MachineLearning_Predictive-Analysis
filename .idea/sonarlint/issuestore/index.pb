@@ -1,3 +1,30 @@
 
-R
-"src/MLR/MLR_LogisticRegresion.java,4\f\4fa5af96c97da6b315945fca0541d46b07b23804
+D
+Machine_Learning.iml,f\b\fb8b10139fb1ccbe414a254435802dfa593a3d4b
+O
+src/MLR/Cramer/IMLR_Cramer.java,8\5\85daacbbe63491c7b199dd549c2fb3d401ded330
+D
+src/SLR/DataSet.java,8\c\8c48fd6a499e972357acb67874c57e5db86550c6
+A
+src/SLR/ISLR.java,4\d\4d254b5d1964d5567def8ee30121b27552ef501b
+@
+src/SLR/SLR.java,d\3\d3a2ebbc6a0b1c878a7540ba1cb42c9610074623
+V
+&src/MLR/Vectorized/MLR_Vectorized.java,0\3\0312086e470fe70fea6c2bf924f871ef646d0201
+O
+src/MLR/Vectorized/DataSet.java,b\2\b2ea979eb60b9f7a459c1bf1ee5bbfb1dd3a1d29
+W
+'src/MLR/LogisticRegression/DataSet.java,d\2\d2d5c86f67eb461c2aba3e6be3fc4d4facc8616b
+O
+src/MLR/Cramer/CramerModel.java,d\e\de9cd8e5019c8ae584a4ff397de631722af01f9b
+g
+7src/MLR/LogisticRegression/IMLR_LogisticRegression.java,8\3\83a2627d24e1acf07acaffad87818460da950686
+f
+6src/MLR/LogisticRegression/MLR_LogisticRegression.java,f\9\f9137cddcc575827214596b96966d1376b18370d
+f
+6src/MLR/DescendingGradient/MLR_DescendingGradient.java,8\a\8aad4940c78103af5886b27d5cd72508a3b16e1a
+W
+'src/MLR/DescendingGradient/DataSet.java,8\7\873876fceea6cc4c43e09f5807c9075f2834a364
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

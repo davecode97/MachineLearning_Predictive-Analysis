@@ -1,4 +1,4 @@
-package MLR.LogisticRegression;
+package MultiLinearRegression.LogisticRegression;
 
 public interface IMLR_LogisticRegression {
     void display();

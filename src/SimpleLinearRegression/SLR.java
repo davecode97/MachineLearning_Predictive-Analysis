@@ -1,4 +1,4 @@
-package SLR;
+package SimpleLinearRegression;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -13,7 +13,7 @@ public class SLR implements ISLR{
     BigDecimal n;
 
     //-------- D A T A S E T -----------
-    DataSet dataSet;
+    DataSet dataSet = new DataSet();
 
     BigDecimal n_SLR_BigD = BigDecimal.valueOf(dataSet.x_SLR.length);
 

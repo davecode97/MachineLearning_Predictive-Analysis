@@ -1,4 +1,4 @@
-package MLR.Cramer;
+package MultiLinearRegression.Cramer;
 
 public class CramerModel {
     private double _pos00;

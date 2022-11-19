@@ -1,4 +1,4 @@
-package SLR;
+package SimpleLinearRegression;
 
 public class DataSet {
     public int[] x_SLR = { 1, 2, 3, 4,  5,  6,  7,  8,  9 };
