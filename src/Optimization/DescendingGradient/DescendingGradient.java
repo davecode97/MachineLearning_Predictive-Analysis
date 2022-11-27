@@ -1,10 +1,12 @@
 package Optimization.DescendingGradient;
 
+import DataSets.DataSet_DG;
+
 import java.math.BigDecimal;
 import java.math.MathContext;
 
 public class DescendingGradient implements IDescendingGradient {
-    DataSet dataSet = new DataSet();
+    DataSet_DG dataSet = new DataSet_DG();
     double x1Sigma = sigma(dataSet.x1);
     int n = dataSet.x1.length;
 
@@ -32,7 +34,8 @@ public class DescendingGradient implements IDescendingGradient {
 
         } else {
         //---- STEP 4: LEARNING RULES
-            // CHECK DYNAMIC PROGRAMMING (MEMORIZATION SPEND)
+            // CHECK DYNAMIC PROGRAMMING (MEMORIZATION SPENT)
+            // Global scope memorization or passing arguments through method
             Beta0 = learningRulesBeta(step2BigDecimalB0, auxBeta0);
             Beta1 = learningRulesBeta(step2BigDecimalB1, auxBeta1);
             System.out.println("BETA0: " + Beta0 + "  " + "BETA1: " + Beta1);

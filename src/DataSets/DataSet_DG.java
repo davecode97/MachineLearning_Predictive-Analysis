@@ -1,7 +1,7 @@
-package Optimization.DescendingGradient;
+package DataSets;
 
-public class DataSet {
-    double[][] x1 =
+public class DataSet_DG {
+    public double[][] x1 =
             {
                     {651 },
                     {762 },
@@ -14,7 +14,7 @@ public class DataSet {
                     {1518}
             };
 
-    double[][] y =
+    public double[][] y =
             {
                     {23},
                     {26},

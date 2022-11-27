@@ -1,30 +1,26 @@
 
 D
 Machine_Learning.iml,f\b\fb8b10139fb1ccbe414a254435802dfa593a3d4b
-O
-src/MLR/Cramer/IMLR_Cramer.java,8\5\85daacbbe63491c7b199dd549c2fb3d401ded330
-D
-src/SLR/DataSet.java,8\c\8c48fd6a499e972357acb67874c57e5db86550c6
-A
-src/SLR/ISLR.java,4\d\4d254b5d1964d5567def8ee30121b27552ef501b
-@
-src/SLR/SLR.java,d\3\d3a2ebbc6a0b1c878a7540ba1cb42c9610074623
-V
-&src/MLR/Vectorized/MLR_Vectorized.java,0\3\0312086e470fe70fea6c2bf924f871ef646d0201
-O
-src/MLR/Vectorized/DataSet.java,b\2\b2ea979eb60b9f7a459c1bf1ee5bbfb1dd3a1d29
-W
-'src/MLR/LogisticRegression/DataSet.java,d\2\d2d5c86f67eb461c2aba3e6be3fc4d4facc8616b
-O
-src/MLR/Cramer/CramerModel.java,d\e\de9cd8e5019c8ae584a4ff397de631722af01f9b
-g
-7src/MLR/LogisticRegression/IMLR_LogisticRegression.java,8\3\83a2627d24e1acf07acaffad87818460da950686
-f
-6src/MLR/LogisticRegression/MLR_LogisticRegression.java,f\9\f9137cddcc575827214596b96966d1376b18370d
-f
-6src/MLR/DescendingGradient/MLR_DescendingGradient.java,8\a\8aad4940c78103af5886b27d5cd72508a3b16e1a
-W
-'src/MLR/DescendingGradient/DataSet.java,8\7\873876fceea6cc4c43e09f5807c9075f2834a364
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+i
+9src/MultiLinearRegression/Vectorized/IMLR_Vectorized.java,a\5\a5c016e44ec4f81b7dd5f699d97de94a27c7db99
+l
+<src/Optimization/DescendingGradient/IDescendingGradient.java,1\3\13c94dafd1079d3cd70a5f01516747cf6ae32ced
+T
+$src/LinearAlgebra/LinearAlgebra.java,0\5\05fb7bc1f799945234280a8e9e1aa9b4036ae984
+T
+$src/DataSets/DataSet_Vectorized.java,b\a\bad899834ca25c62f75b2eee6ba6e7f59b284548
+L
+src/DataSets/DataSet_DG.java,0\f\0f822c2062f90c7bbf0e1c47ed6155ac1156abbe
+L
+src/DataSets/DataSet_LR.java,2\6\2625f00f33917fae52f8e42603208c64ebbde43b
+h
+8src/MultiLinearRegression/Vectorized/MLR_Vectorized.java,e\6\e613ee3ce1d24894ccd76eefd90076f1800dfa74
+Q
+!src/DataSets/DataSet_Crammer.java,3\9\39d059f2dc602b0da4c74549dc56202ad4ffdb2e
+T
+$src/SimpleLinearRegression/ISLR.java,3\4\340e412116ca8edcc6c2ac242f1cd1aaf0144f60
+a
+1src/MultiLinearRegression/Cramer/CramerModel.java,7\a\7a749082f02229d2ae251661a965c0f167f46369

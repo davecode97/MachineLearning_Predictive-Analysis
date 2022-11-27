@@ -1,5 +1,7 @@
 package SimpleLinearRegression;
 
+import DataSets.DataSet_SLR;
+
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.ArrayList;
@@ -13,18 +15,18 @@ public class SLR implements ISLR{
     BigDecimal n;
 
     //-------- D A T A S E T -----------
-    DataSet dataSet = new DataSet();
+    DataSet_SLR dataSetSLR = new DataSet_SLR();
 
-    BigDecimal n_SLR_BigD = BigDecimal.valueOf(dataSet.x_SLR.length);
+    BigDecimal n_SLR_BigD = BigDecimal.valueOf(dataSetSLR.x_SLR.length);
 
     @Override
     public void display(){
         ArrayList<BigDecimal> x_SLR_BigD = new ArrayList<>();
         ArrayList<BigDecimal> y_SLR_BigD = new ArrayList<>();
 
-        for (int i = 0; i < dataSet.x_SLR.length; i++) {
-            x_SLR_BigD.add(BigDecimal.valueOf(dataSet.x_SLR[i]));
-            y_SLR_BigD.add(BigDecimal.valueOf(dataSet.y_SLR[i]));
+        for (int i = 0; i < dataSetSLR.x_SLR.length; i++) {
+            x_SLR_BigD.add(BigDecimal.valueOf(dataSetSLR.x_SLR[i]));
+            y_SLR_BigD.add(BigDecimal.valueOf(dataSetSLR.y_SLR[i]));
         }
 
         this.x = x_SLR_BigD;

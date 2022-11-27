@@ -1,8 +1,9 @@
 package MultiLinearRegression.Vectorized;
 
+import DataSets.DataSet_Vectorized;
+
 import java.math.BigDecimal;
 import java.math.MathContext;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -11,17 +12,15 @@ public class MLR_Vectorized {
 
     // Formula: beta = (X^T X)^-1 X^T y
     //---- DATASET
-    DataSet dataSet = new DataSet();
+    DataSet_Vectorized dataSetVectorized = new DataSet_Vectorized();
 
     /*
       falla la inversa porque la matrix xTx esta incorrecta
      */
     public void display() {
-        System.out.println("-----------          MLR Vectorized        ---------");
-
         // --- X^T
-        double[][] xT = IntStream.range(0, dataSet.X[0].length)
-                .mapToObj(i -> Stream.of(dataSet.X).mapToDouble(row -> row[i]).toArray())
+        double[][] xT = IntStream.range(0, dataSetVectorized.X[0].length)
+                .mapToObj(i -> Stream.of(dataSetVectorized.X).mapToDouble(row -> row[i]).toArray())
                 .toArray(double[][]::new);
         // 17  x 1
         System.out.println(Arrays.deepToString(xT));
@@ -29,10 +28,11 @@ public class MLR_Vectorized {
 
         //----- 1. Calculate: (X^T X)
 
-        BigDecimal[][] xTx = multiplyMatrices(doubleToBigDecimal(xT), doubleToBigDecimal(dataSet.X));
+        BigDecimal[][] xTx = multiplyMatrices(doubleToBigDecimal(xT), doubleToBigDecimal(dataSetVectorized.X));
+        System.out.println(Arrays.deepToString(xTx)); // falla
 
         //----- 2. Calculate: (X^T y)
-        BigDecimal[][] step2 = multiplyMatrices(doubleToBigDecimal(xT), doubleToBigDecimal(dataSet.y));
+        BigDecimal[][] step2 = multiplyMatrices(doubleToBigDecimal(xT), doubleToBigDecimal(dataSetVectorized.y));
         System.out.println(Arrays.deepToString(step2));
 
         //----- 3. Calculate: (X^T X)^(-1) [INVERSE]
@@ -41,9 +41,9 @@ public class MLR_Vectorized {
 
 
         //----- 4. Beta = (X^T X)^-1 * X^T y
-        // double step4[][] = multiplyMatrices(step3, step2);
+        BigDecimal[][] step4 = multiplyMatrices(step3, step2);
 
-        //System.out.println(Arrays.deepToString(step4));
+        System.out.println(Arrays.deepToString(step4));
     }
 
 

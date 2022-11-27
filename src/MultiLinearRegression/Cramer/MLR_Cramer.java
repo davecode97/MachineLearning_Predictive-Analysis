@@ -1,23 +1,25 @@
 package MultiLinearRegression.Cramer;
 
+import DataSets.DataSet_Crammer;
+
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.Objects;
 
 public class MLR_Cramer implements IMLR_Cramer{
 
-        DataSet dataSet = new DataSet();
+        DataSet_Crammer dataSetCrammer = new DataSet_Crammer();
         double sum = 0;
 
-        double sigmaX0I       = sigma(dataSet.X0);                // 1. SIGMA X0, i
-        double sigmaX1I       = sigma(dataSet.X1);                // 2. SIGMA X1, i
-        double sigmaX2I       = sigma(dataSet.X2);                // 3. SIGMA X2, i
-        double sigmaYI        = sigma(dataSet.Y);                 // 4. SIGMA Y, i
-        double sigmaX1SquareI = sigmaSquare(dataSet.X1);          // 5. SIGMA X1^2, i
-        double sigmaX2SquareI = sigmaSquare(dataSet.X2);           // 6. SIGMA X2^2, i
-        double sigmaX1iYI     = sigma(dataSet.X1, dataSet.Y);      // 7. SIGMA X1,i y
-        double sigmaX2iYI     = sigma(dataSet.X2, dataSet.Y);      // 8. SIGMA X2,i y
-        double sigmaX1iX2I    = sigma(dataSet.X1, dataSet.X2);     // 9. SIGMA X1,i X2, i
+        double sigmaX0I       = sigma(dataSetCrammer.X0);                // 1. SIGMA X0, i
+        double sigmaX1I       = sigma(dataSetCrammer.X1);                // 2. SIGMA X1, i
+        double sigmaX2I       = sigma(dataSetCrammer.X2);                // 3. SIGMA X2, i
+        double sigmaYI        = sigma(dataSetCrammer.Y);                 // 4. SIGMA Y, i
+        double sigmaX1SquareI = sigmaSquare(dataSetCrammer.X1);          // 5. SIGMA X1^2, i
+        double sigmaX2SquareI = sigmaSquare(dataSetCrammer.X2);           // 6. SIGMA X2^2, i
+        double sigmaX1iYI     = sigma(dataSetCrammer.X1, dataSetCrammer.Y);      // 7. SIGMA X1,i y
+        double sigmaX2iYI     = sigma(dataSetCrammer.X2, dataSetCrammer.Y);      // 8. SIGMA X2,i y
+        double sigmaX1iX2I    = sigma(dataSetCrammer.X1, dataSetCrammer.X2);     // 9. SIGMA X1,i X2, i
 
         double[][] pivotMatrix = pivotMatrix();
 
@@ -38,6 +40,12 @@ public class MLR_Cramer implements IMLR_Cramer{
                 System.out.println("beta0: " + D0.divide(DS, MathContext.DECIMAL64));
                 System.out.println("beta1: " + D1.divide(DS, MathContext.DECIMAL64));
                 System.out.println("beta2: " + D2.divide(DS, MathContext.DECIMAL64));
+
+                System.out.println("y = "
+                        + D0.divide(DS, MathContext.DECIMAL64) + " + "
+                        + D1.divide(DS, MathContext.DECIMAL64) + " x_1 + "
+                        + D2.divide(DS, MathContext.DECIMAL64) + " x_2"
+                        + "  + epsilon");
 
         }
 

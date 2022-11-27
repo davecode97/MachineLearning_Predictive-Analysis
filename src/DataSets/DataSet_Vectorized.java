@@ -1,8 +1,6 @@
-package MultiLinearRegression.Vectorized;
+package DataSets;
 
-import java.math.BigDecimal;
-
-public class DataSet {
+public class DataSet_Vectorized {
     public double[][] X =
             {
                     {1, 41.9, 29.1}, // 3 x 17

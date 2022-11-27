@@ -1,6 +1,6 @@
-package MultiLinearRegression.Cramer;
+package DataSets;
 
-public class DataSet {
+public class DataSet_Crammer {
     public double[][] X0 =
             {
                     {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1},
