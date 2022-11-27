@@ -1,9 +1,6 @@
 
 D
 Machine_Learning.iml,f\b\fb8b10139fb1ccbe414a254435802dfa593a3d4b
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 i
 9src/MultiLinearRegression/Vectorized/IMLR_Vectorized.java,a\5\a5c016e44ec4f81b7dd5f699d97de94a27c7db99
 l
