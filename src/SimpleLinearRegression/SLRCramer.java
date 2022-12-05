@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.Objects;
 
-public class SLRCrammer implements ISLR
+public class SLRCramer implements ISLR
 {
     DataSet_SLR dataSetSlr = new DataSet_SLR();
 

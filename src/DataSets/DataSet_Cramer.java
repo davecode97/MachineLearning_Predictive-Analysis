@@ -1,6 +1,6 @@
 package DataSets;
 
-public class DataSet_Crammer {
+public class DataSet_Cramer {
     public double[][] X0 =
             {
                     {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1},

@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import org.la4j.Matrices;
+import org.la4j.inversion.GaussJordanInverter.*;
 public class MLR_Vectorized {
 
     // Formula: beta = (X^T X)^-1 X^T y
@@ -36,7 +38,7 @@ public class MLR_Vectorized {
         System.out.println(Arrays.deepToString(step2));
 
         //----- 3. Calculate: (X^T X)^(-1) [INVERSE]
-        BigDecimal[][] step3 = inverse(xTx);
+        BigDecimal[][] step3 = step2.;
         System.out.println(Arrays.deepToString(step3));
 
 

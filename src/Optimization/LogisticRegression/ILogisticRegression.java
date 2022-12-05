@@ -1,5 +1,5 @@
 package Optimization.LogisticRegression;
 
-public interface IMLR_LogisticRegression {
+public interface ILogisticRegression {
     void display();
 }

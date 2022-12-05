@@ -1,9 +1,9 @@
 import MultiLinearRegression.Cramer.MLR_Cramer;
-import Optimization.LogisticRegression.MLR_LogisticRegression;
+import Optimization.LogisticRegression.LogisticRegression;
 import Optimization.DescendingGradient.DescendingGradient;
 import MultiLinearRegression.Vectorized.MLR_Vectorized;
 import SimpleLinearRegression.SLR;
-import SimpleLinearRegression.SLRCrammer;
+import SimpleLinearRegression.SLRCramer;
 
 import java.util.Scanner;
 
@@ -27,7 +27,7 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("\t----------  S I M P L E  L I N E A R   R E G R E S S I O N   C R A M M E R  2 x 2----------");
-                    new SLRCrammer().display();
+                    new SLRCramer().display();
                     System.out.println("\nSelect another option...");
                     menu();
                     menu = option.nextInt();
@@ -55,7 +55,7 @@ public class Main {
                     break;
                 case 6:
                     System.out.println("\t----------  L O G I S T I C   R E G R E S S I O N   ----------");
-                    new MLR_LogisticRegression().display();
+                    new LogisticRegression().display();
                     System.out.println("\nSelect another option...");
                     menu();
                     menu = option.nextInt();

@@ -16,17 +16,18 @@ public class DescendingGradient implements IDescendingGradient {
 
     //----- Learning Rate
     BigDecimal Alfa  = BigDecimal.valueOf(0.003);
-
+    BigDecimal tolerance;
 
     @Override
     public void display()
     {
+        tolerance = new BigDecimal(0.1);
         //---- STEP 2: InverseDelta f(Beta0, Beta1)
         BigDecimal step2BigDecimalB1 = objectiveFunction("BETA1");
         BigDecimal step2BigDecimalB0 = objectiveFunction("BETA0");
         BigDecimal auxBeta0 = Beta0;
         BigDecimal auxBeta1 = Beta1;
-
+        System.out.println("Epsilon " + calculateEpsilon().doubleValue());
         //---- STEP 3: CALCULATE Epsilon
         if (calculateEpsilon().doubleValue() < 0.4 && calculateEpsilon().doubleValue() > -0.4) {
             System.out.println("BETA0: " + Beta0 + "  " + "BETA1: " + Beta1);
@@ -41,6 +42,7 @@ public class DescendingGradient implements IDescendingGradient {
             System.out.println("BETA0: " + Beta0 + "  " + "BETA1: " + Beta1);
             System.out.println("> Error isn't close to 0, thus program will back to step 3");
 
+            //----- BACK TO STEP 3
             display();
         }
     }

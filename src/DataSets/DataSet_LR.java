@@ -2,29 +2,7 @@ package DataSets;
 
 public class DataSet_LR {
 
-    public double[][] x1 =
-            {
-                    {651 },
-                    {762 },
-                    {856 },
-                    {1063},
-                    {1190},
-                    {1298},
-                    {1421},
-                    {1440},
-                    {1518}
-            };
-
-    public double[][] y =
-            {
-                    {23},
-                    {26},
-                    {30},
-                    {34},
-                    {43},
-                    {48},
-                    {52},
-                    {57},
-                    {58}
-            };
+    public double[] x1 = {1, 4, 2};
+    public double[] x2 = {1, 2, 4};
+    public double[] y = {0, 1, 1};
 }

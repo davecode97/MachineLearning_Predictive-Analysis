@@ -1,6 +1,6 @@
 package MultiLinearRegression.Cramer;
 
-import DataSets.DataSet_Crammer;
+import DataSets.DataSet_Cramer;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class MLR_Cramer implements IMLR_Cramer{
 
-        DataSet_Crammer dataSetCrammer = new DataSet_Crammer();
+        DataSet_Cramer dataSetCrammer = new DataSet_Cramer();
         double sum = 0;
 
         double sigmaX0I       = sigma(dataSetCrammer.X0);                // 1. SIGMA X0, i
