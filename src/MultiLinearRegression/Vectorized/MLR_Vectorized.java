@@ -29,23 +29,23 @@ public class MLR_Vectorized {
 
 
         //----- 1. Calculate: (X^T X)
-
-        BigDecimal[][] xTx = multiplyMatrices(doubleToBigDecimal(xT), doubleToBigDecimal(dataSetVectorized.X));
-        System.out.println(Arrays.deepToString(xTx)); // falla
-
-        //----- 2. Calculate: (X^T y)
-        BigDecimal[][] step2 = multiplyMatrices(doubleToBigDecimal(xT), doubleToBigDecimal(dataSetVectorized.y));
-        System.out.println(Arrays.deepToString(step2));
+//
+//        BigDecimal[][] xTx = multiplyMatrices(doubleToBigDecimal(xT), doubleToBigDecimal(dataSetVectorized.X));
+//        System.out.println(Arrays.deepToString(xTx)); // falla
+//
+//        //----- 2. Calculate: (X^T y)
+//        BigDecimal[][] step2 = multiplyMatrices(doubleToBigDecimal(xT), doubleToBigDecimal(dataSetVectorized.y));
+//        System.out.println(Arrays.deepToString(step2));
 
         //----- 3. Calculate: (X^T X)^(-1) [INVERSE]
-        BigDecimal[][] step3 = step2.;
-        System.out.println(Arrays.deepToString(step3));
+//        BigDecimal[][] step3 = step2.;
+//        System.out.println(Arrays.deepToString(step3));
 
 
         //----- 4. Beta = (X^T X)^-1 * X^T y
-        BigDecimal[][] step4 = multiplyMatrices(step3, step2);
-
-        System.out.println(Arrays.deepToString(step4));
+//        BigDecimal[][] step4 = multiplyMatrices(step3, step2);
+//
+//        System.out.println(Arrays.deepToString(step4));
     }
 
 
