@@ -34,7 +34,7 @@ public class LogisticRegression implements ILogisticRegression
     {
         double v;
         for (int j = 0; j < logisticRegressionModel.getIterations(); j++) {
-            System.out.println("Lap " + (j + 1));
+            System.out.println("Iteration: " + (j + 1));
             double aux0 = 0, aux1 = 0, aux2 = 0;
             for (int i = 0; i < logisticRegressionModel.getN(); i++) {
                 v = ((1 / (1 + Math.pow(Math.E, -(w0 + (w1 * dataSet_lr.x1[i]) + (w2 * dataSet_lr.x2[i]))))) - dataSet_lr.y[i]);

@@ -2,140 +2,112 @@ package MultiLinearRegression.Vectorized;
 
 import DataSets.DataSet_Vectorized;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import org.la4j.Matrices;
-import org.la4j.inversion.GaussJordanInverter.*;
 public class MLR_Vectorized {
 
     // Formula: beta = (X^T X)^-1 X^T y
     //---- DATASET
     DataSet_Vectorized dataSetVectorized = new DataSet_Vectorized();
 
-    /*
-      falla la inversa porque la matrix xTx esta incorrecta
-     */
     public void display() {
         // --- X^T
-        double[][] xT = IntStream.range(0, dataSetVectorized.X[0].length)
-                .mapToObj(i -> Stream.of(dataSetVectorized.X).mapToDouble(row -> row[i]).toArray())
-                .toArray(double[][]::new);
+        double[][] xT = transposeMatrix(dataSetVectorized.X);
         // 17  x 1
-        System.out.println(Arrays.deepToString(xT));
-
+        System.out.println("0. X^T [Transpose]:  " + Arrays.deepToString(xT));
 
         //----- 1. Calculate: (X^T X)
-//
-//        BigDecimal[][] xTx = multiplyMatrices(doubleToBigDecimal(xT), doubleToBigDecimal(dataSetVectorized.X));
-//        System.out.println(Arrays.deepToString(xTx)); // falla
-//
-//        //----- 2. Calculate: (X^T y)
-//        BigDecimal[][] step2 = multiplyMatrices(doubleToBigDecimal(xT), doubleToBigDecimal(dataSetVectorized.y));
-//        System.out.println(Arrays.deepToString(step2));
+        double[][] xTx = multiplyMatrices(xT, dataSetVectorized.X);
+        System.out.println("1. Calculate: (X^T X):  " + Arrays.deepToString(xTx));
+
+        //----- 2. Calculate: (X^T y)
+        double[][] step2 = multiplyMatrices(xT, dataSetVectorized.y);
+        System.out.println("2. Calculate: (X^T y):  " + Arrays.deepToString(step2));
 
         //----- 3. Calculate: (X^T X)^(-1) [INVERSE]
-//        BigDecimal[][] step3 = step2.;
-//        System.out.println(Arrays.deepToString(step3));
+        double[][] step3 = inverse(xTx);
+        System.out.println("3. Calculate: (X^T X)^(-1) [INVERSE]:  " + Arrays.deepToString(step3));
 
 
         //----- 4. Beta = (X^T X)^-1 * X^T y
-//        BigDecimal[][] step4 = multiplyMatrices(step3, step2);
-//
-//        System.out.println(Arrays.deepToString(step4));
+        double[][] step4 = multiplyMatrices(step3, step2);
+        System.out.println("4. Beta = (X^T X)^-1 * X^T y:  " + Arrays.deepToString(step4));
+
+        for (int i = 0; i < step4.length; i++)
+            System.out.println("Beta"+i+": "+step4[i][0]);
+
+        System.out.println("\ny = " + step4[0][0] +"  +  "+ step4[1][0] +" x1  +  "+ step4[2][0] +" x2   + epsilon");
     }
 
 
-    private BigDecimal[][] multiplyMatrices(BigDecimal[][] firstMatrix, BigDecimal[][] secondMatrix) {
-        BigDecimal[][] result = new BigDecimal[firstMatrix.length][secondMatrix[0].length];
+    private double[][] multiplyMatrices(double[][] firstMatrix, double[][] secondMatrix) {
+        double[][] result = new double[firstMatrix.length][secondMatrix[0].length];
 
         for (int row = 0; row < result.length; row++) {
             for (int col = 0; col < result[row].length; col++) {
-                result[row][col] = multiplyMatricesCell(firstMatrix, secondMatrix, row, col);
+                double cell = 0;
+                for (int i = 0; i < secondMatrix.length; i++) {
+                    cell += firstMatrix[row][i] * secondMatrix[i][col];
+                    result[row][col] = cell;
+                }
             }
         }
 
         return result;
     }
 
-    private BigDecimal multiplyMatricesCell(BigDecimal[][] firstMatrix, BigDecimal[][] secondMatrix, int row, int col) {
-        BigDecimal cell = new BigDecimal(0);
-        for (int i = 0; i < secondMatrix.length; i++) {
-            cell = cell.add(firstMatrix[row][i].multiply(secondMatrix[i][col]), MathContext.DECIMAL64);
+    private double[][] inverse(double[][] z) {
+        double[][] X = transferMatrix(z);
+        double[][] I = new double[X.length][X[0].length];
+        double A, B, C, D;
+        for(int i = 0; i < X.length; i++){
+            I[i][i] = 1.0;
         }
-
-        return cell;
-    }
-
-
-    private static BigDecimal determinant(BigDecimal[][] matrix) {
-        BigDecimal determinantBigDecimal = new BigDecimal(0);
-
-        if (matrix.length != matrix[0].length)
-            throw new IllegalStateException("invalid dimensions");
-
-        if (matrix.length == 2) {
-            determinantBigDecimal = (matrix[0][0]).multiply(matrix[1][1]).subtract(matrix[0][1]).multiply(matrix[1][0]);
-            return determinantBigDecimal;
-        }
-
-        for (int i = 0; i < matrix[0].length; i++) {
-            determinantBigDecimal = determinantBigDecimal.add(BigDecimal.valueOf(Math.pow(-1, i))).multiply(matrix[0][i]).
-                    multiply((determinant(minor(matrix, 0, i))));
-        }
-
-        return determinantBigDecimal;
-    }
-
-    private static BigDecimal[][] inverse(BigDecimal[][] matrix) {
-        BigDecimal[][] inverse = new BigDecimal[matrix.length][matrix.length];
-
-        // minors and cofactors
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                inverse[i][j] = BigDecimal.valueOf(Math.pow(-1, i + j)).multiply((determinant(minor(matrix, i, j))), MathContext.DECIMAL64);
+        for(int i = 1; i < X.length; i++){
+            for(int j = 0; j < i; j++){
+                A = X[i][j];
+                B = X[j][j];
+                for(int k = 0; k < X.length; k++){
+                    X[i][k] = X[i][k] - (A/B)*X[j][k];
+                    I[i][k] = I[i][k] - (A/B)*I[j][k];
+                }
             }
         }
-        // adjugate and determinant
-        BigDecimal aux = BigDecimal.valueOf(1);
-        BigDecimal det = aux.divide(determinant(matrix), MathContext.DECIMAL64);
-        BigDecimal temp;
+        for(int i = 1; i < X.length; i++){
+            for(int j = 0; j < i; j++){
+                C = X[j][i];
+                D = X[i][i];
 
-        for (int i = 0; i < inverse.length; i++) {
-            for (int j = 0; j <= i; j++) {
-                temp = inverse[i][j];
-                inverse[i][j] = inverse[j][i].multiply((det), MathContext.DECIMAL64);
-                inverse[j][i] = temp.multiply((det), MathContext.DECIMAL64);
+                for(int k = 0; k < X.length; k++){
+                    X[j][k] = X[j][k] - (C/D)*X[i][k];
+                    I[j][k] = I[j][k] - (C/D)*I[i][k];
+                }
             }
         }
-
-        return inverse;
-    }
-
-    private static BigDecimal[][] minor(BigDecimal[][] matrix, int row, int column) {
-        BigDecimal[][] minor = new BigDecimal[matrix.length - 1][matrix.length - 1];
-
-        for (int i = 0; i < matrix.length; i++)
-            for (int j = 0; i != row && j < matrix[i].length; j++)
-                if (j != column)
-                    minor[i < row ? i : i - 1][j < column ? j : j - 1] = matrix[i][j];
-
-        return minor;
-    }
-
-    private BigDecimal[][] doubleToBigDecimal(double[][] array) {
-        BigDecimal[][] aux = new BigDecimal[array.length][array[0].length];
-
-        for (int row = 0; row < array.length; row++) {
-            for (int col = 0; col < array[0].length; col++) {
-                aux[row][col] = BigDecimal.valueOf(array[row][col]);
+        for(int i = 0; i < X.length; i++){
+            for(int j = 0; j < X[0].length; j++){
+                I[i][j] = I[i][j] / X[i][i];
             }
         }
-
-        return aux;
+        return I;
     }
 
+    private double[][] transferMatrix(double[][] matrix){
+        int m = matrix.length, n = matrix[0].length;
+        double[][] T = new double[m][n];
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                T[i][j] = matrix[i][j];
+            }
+        }
+        return T;
+    }
+
+    private double[][] transposeMatrix(double [][] matrix) {
+        return IntStream.range(0, matrix[0].length)
+                .mapToObj(i -> Stream.of(matrix).mapToDouble(row -> row[i]).toArray())
+                .toArray(double[][]::new);
+    }
 }

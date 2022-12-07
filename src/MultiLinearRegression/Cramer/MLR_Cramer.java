@@ -41,10 +41,10 @@ public class MLR_Cramer implements IMLR_Cramer{
                 System.out.println("beta1: " + D1.divide(DS, MathContext.DECIMAL64));
                 System.out.println("beta2: " + D2.divide(DS, MathContext.DECIMAL64));
 
-                System.out.println("y = "
-                        + D0.divide(DS, MathContext.DECIMAL64) + " + "
-                        + D1.divide(DS, MathContext.DECIMAL64) + " x_1 + "
-                        + D2.divide(DS, MathContext.DECIMAL64) + " x_2"
+                System.out.println("\ny = "
+                        + D0.divide(DS, MathContext.DECIMAL64) + "  +  "
+                        + D1.divide(DS, MathContext.DECIMAL64) + " x1  + "
+                        + D2.divide(DS, MathContext.DECIMAL64) + " x2"
                         + "  + epsilon");
 
         }

@@ -55,7 +55,7 @@ public class SLR implements ISLR{
     }
 
     private void printSLR_Equation() {
-        System.out.println("y = " + beta1() + "x + " + beta0() + " + epsilon");
+        System.out.println("y = " + beta1() + " x  + " + beta0() + " + epsilon");
     }
 
 

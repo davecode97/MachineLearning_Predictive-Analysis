@@ -31,7 +31,7 @@ public class SLRCramer implements ISLR
         D0 = determinant(Objects.requireNonNull(setCramerModel("BETA0")));
         D1 = determinant(Objects.requireNonNull(setCramerModel("BETA1")));
 
-        System.out.println("y = " + D1.divide(DS, MathContext.DECIMAL64) + " x + " +  D0.divide(DS, MathContext.DECIMAL64) + " + epsilon");
+        System.out.println("y = " + D1.divide(DS, MathContext.DECIMAL64) + " x   +  " +  D0.divide(DS, MathContext.DECIMAL64) + "  + epsilon");
     }
 
 
