@@ -16,7 +16,7 @@ Java 11 Version
 > Optimization: Logistic Regression.
 
 
-## Screnshot:
+## Screenshot:
 ![Screenshot from 2022-12-07 03-07-15](https://user-images.githubusercontent.com/67779237/206136204-c390152f-526a-4868-aee1-c87a1dcb58d7.png)
 
 
