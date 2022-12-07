@@ -75,11 +75,11 @@ public class Main {
     {
         System.out.println(" -------  MENU ------");
         System.out.println("1. Simple linear Regression.");
-        System.out.println("2. Simple linear Regression - Crammer");
-        System.out.println("3. Multilinear Regression - Vectorized.");
-        System.out.println("4. Multilinear Regression - Cramer.");
-        System.out.println("5. Multilinear Regression - Descending Gradient.");
-        System.out.println("6. Multilinear Regression - Logistic Regression.");
+        System.out.println("2. Simple linear Regression - Cramer 2 x 2.");
+        System.out.println("3. Multi Linear Regression   - Vectorized.");
+        System.out.println("4. Multi Linear Regression   - Cramer 3 x 3.");
+        System.out.println("5. Multi Linear Regression   - Descending Gradient.");
+        System.out.println("6. Multi Linear Regression   - Logistic Regression.");
         System.out.println("7. Out.");
     }
 }
