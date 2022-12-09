@@ -5,11 +5,11 @@ Java 11 Version
 ## Algorithms:
 > Simple Linear Regression.
 
-> Simple Linear Regression by Cramer 2 x 2.
+> Simple Linear Regression by Cramer 2 x 2 Method.
 
-> Multiple Linear Regression by Vectorized method.
+> Multiple Linear Regression by Vectorized Method.
 
-> Multiple Linear Regression by Cramer 3 x 3 method.
+> Multiple Linear Regression by Cramer 3 x 3 Method.
 
 > Optimization: Gradient.
 
