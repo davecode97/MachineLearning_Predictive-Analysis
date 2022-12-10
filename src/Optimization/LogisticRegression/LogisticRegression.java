@@ -76,15 +76,18 @@ public class LogisticRegression implements ILogisticRegression
         w2 = w2 - (logisticRegressionModel.getLearningRate() * (aux2));
 
         System.out.println("wo: " + w0 + "  |  " + "  w1: " + w1 + "  |  " + "  w2: " + w2);
+
     }
 
     public void sigmoid(double nx1, double nx2)
     {
         sigmoid = ((1) / (1 + Math.pow(Math.E, -(w0 + w1 * nx1 + (w2) * nx2))));
-        System.out.println("Sigmoid: " + sigmoid);
+        System.out.println("\nSigmoid: " + sigmoid);
         if (sigmoid > 0.5)
-            System.out.println("Good!");
+            System.out.println("The sigmoid is greater than 0.5, therefore Good!");
         else
-            System.out.println("Bad!");
+            System.out.println("The sigmoid is less than 0.5, therefore Bad!");
     }
+
+
 }

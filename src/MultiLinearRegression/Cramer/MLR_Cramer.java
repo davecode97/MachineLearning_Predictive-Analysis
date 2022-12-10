@@ -47,6 +47,13 @@ public class MLR_Cramer implements IMLR_Cramer{
                         + D2.divide(DS, MathContext.DECIMAL64) + " x2"
                         + "  + epsilon");
 
+                System.out.println("Predictions");
+                for (int i = 1; i < 50; i++)
+                        System.out.println("\ny = "
+                                + D0.divide(DS, MathContext.DECIMAL64).multiply(BigDecimal.valueOf(i))+ "  +  "
+                                + D1.divide(DS, MathContext.DECIMAL64) .multiply(BigDecimal.valueOf(i))+ "  + "
+                                + D2.divide(DS, MathContext.DECIMAL64) .multiply(BigDecimal.valueOf(i)) + ""
+                                + "  + epsilon");
         }
 
         private CramerModel setCramerModel(String typo) {

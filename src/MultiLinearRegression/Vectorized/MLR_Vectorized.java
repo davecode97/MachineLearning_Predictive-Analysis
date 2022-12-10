@@ -39,6 +39,10 @@ public class MLR_Vectorized {
             System.out.println("Beta"+i+": "+step4[i][0]);
 
         System.out.println("\ny = " + step4[0][0] +"  +  "+ step4[1][0] +" x1  +  "+ step4[2][0] +" x2   + epsilon");
+
+        System.out.println("Predictions: ");
+        for (int i = 1; i < 50; i++)
+            System.out.println("\ny = " + step4[0][0] * i +"  +  "+ step4[1][0] * i + "  +  "+ step4[2][0] * i  + "   + epsilon");
     }
 
 

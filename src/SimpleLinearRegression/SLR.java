@@ -56,6 +56,9 @@ public class SLR implements ISLR{
 
     private void printSLR_Equation() {
         System.out.println("y = " + beta1() + " x  + " + beta0() + " + epsilon");
+        System.out.println("Predictions");
+        for (int i = 1; i < 50; i++)
+            System.out.println("y = " + beta1().multiply(BigDecimal.valueOf(i))  + "  +   " + beta0().multiply(BigDecimal.valueOf(i)) + "  + epsilon");
     }
 
 
